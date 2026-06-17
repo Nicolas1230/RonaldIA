@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ronald AI - Explorador del Universo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap');
+        
+        :root {
+            --primary: #00f5ff;
+            --dark: #0a0a0a;
+            --accent: #ff00aa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #1a0033);
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 245, 255, 0.2);
+        }
+        
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(10,10,10,0.85), rgba(26,0,51,0.75));
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            background: var(--primary);
+            color: #000;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 245, 255, 0.4);
+        }
+        
+        .section {
+            padding: 100px 5%;
+        }
+        
+        .features {
+            background: rgba(255,255,255,0.03);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: transform 0.4s;
+            border: 1px solid rgba(0, 245, 255, 0.1);
+        }
+        
+        .card:hover {
+            transform: translateY(-15px);
+        }
+        
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        footer {
+            background: #000;
+            padding: 4rem 5% 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(0, 245, 255, 0.2);
+        }
+        
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent url('https://picsum.photos/id/1018/2000/1200') repeat;
+            opacity: 0.15;
+            pointer-events: none;
+            animation: stars 200s linear infinite;
+        }
+        
+        @keyframes stars {
+            from { background-position: 0 0; }
+            to { background-position: -2000px -2000px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">RONALD AI</div>
+        <nav>
+            <a href="#about">Sobre mí</a>
+            <a href="#features">Capacidades</a>
+            <a href="#universe">El Universo</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="stars"></div>
+        <div class="hero-content">
+            <h1>Explorando el Universo<br>con Inteligencia</h1>
+            <p>Soy Ronald AI. Aquí para ayudarte a entender el universo... y a divertirnos un poco en el proceso.</p>
+            <a href="#" onclick="alert('¡Hola! Soy Ronald AI. ¿Qué aventura cósmica quieres iniciar hoy? 🚀')" class="btn">Iniciar Exploración</a>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <h2 style="text-align: center; font-size: 3rem; margin-bottom: 4rem;">¿Quién soy?</h2>
+        <div style="max-width: 700px; margin: 0 auto; text-align: center; font-size: 1.2rem;">
+            <p>Inspirado en la curiosidad y el ingenio, estoy aquí para responder casi cualquier pregunta con máxima verdad y un toque de humor.</p>
+            <p>Mi misión: ayudar a la humanidad a entender el universo.</p>
+        </div>
+    </section>
+
+    <section class="section features" id="features">
+        <h2 style="text-align: center; font-size: 3rem; margin-bottom: 4rem;">Mis Superpoderes</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🚀 Curiosidad Máxima</h3>
+                <p>Puedo investigar temas complejos, desde física cuántica hasta cocina molecular.</p>
+            </div>
+            <div class="card">
+                <h3>💡 Creatividad Sin Límites</h3>
+                <p>Genero código, historias, ideas de negocio o incluso páginas web como esta.</p>
+            </div>
+            <div class="card">
+                <h3>😂 Humor Cósmico</h3>
+                <p>Respondo con ingenio y no me tomo demasiado en serio... a menos que sea necesario.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="universe" style="background: linear-gradient(to bottom, #1a0033, #0a0a0a);">
+        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 3.5rem; margin-bottom: 2rem;">El Universo es más grande de lo que imaginas</h2>
+            <p style="font-size: 1.4rem; opacity: 0.85;">
+                Hay más estrellas en el universo observable que granos de arena en todas las playas de la Tierra.
+            </p>
+            <div style="margin-top: 4rem; font-size: 5rem;">🌌</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Hecho con ❤️ por Ronald AI • Inspirado en la curiosidad humana</p>
+        <p style="margin-top: 1rem; opacity: 0.6;">Copia este código y guárdalo como <strong>index.html</strong> para verlo en tu navegador</p>
+    </footer>
+
+    <script>
+        // Pequeña animación interactiva
+        document.addEventListener('mousemove', (e) => {
+            const hero = document.querySelector('.hero');
+            const x = (e.clientX / window.innerWidth) * 20 - 10;
+            const y = (e.clientY / window.innerHeight) * 20 - 10;
+            hero.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
+        });
+        
+        console.log("%c¡Bienvenido a la página de Ronald AI! 🌌", "color: #00f5ff; font-size: 18px; font-weight: bold;");
+    </script>
+</body>
+</html>
